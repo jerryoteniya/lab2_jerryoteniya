@@ -91,13 +91,20 @@ def search_tweets(tweets, keyword):
 if __name__ == "__main__":  
     dataset = load_raw_data('twitter_dataset.csv')
     print(f"Loaded {len(dataset)} raw tweets.\n")
+    print("\n press anykey to continue to data cleaning...")
+    input()
 
     cleaned_dataset = clean_data(dataset)
+    print(f"Cleaned dataset contains {len(cleaned_dataset)} tweets.\n")
+    print("\n press anykey to continue to top 10 most liked tweets...")
+    input()
 
     find_viral_post(cleaned_dataset)
+  
 
     sorted_tweets = custom_sort_by_likes(cleaned_dataset)
-
+    print("\n press anykey to continue to the next quest.")
+    input()
 
     print("Top 10 most liked tweets:\n")
     for i in range(min(10, len(sorted_tweets))):
